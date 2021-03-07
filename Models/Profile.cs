@@ -22,7 +22,7 @@ namespace MIS4200Team2Project.Models
         {
             get
             {
-                return lastName + ", " + firstname;
+                return lastName + ", " + firstName;
             }
         }
         [Display(Name = "Employee Since")]
