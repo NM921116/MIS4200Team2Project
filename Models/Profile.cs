@@ -14,7 +14,7 @@ namespace MIS4200Team2Project.Models
         {
             get
             {
-                return lastName + ", " + firstName;
+                return lastName + ", " + firstname;
             }
         }
         public DateTime hireDate { get; set; }
