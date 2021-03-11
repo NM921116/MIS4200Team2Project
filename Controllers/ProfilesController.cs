@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 using MIS4200Team2Project.DAL;
 using MIS4200Team2Project.Models;
 
@@ -37,6 +38,7 @@ namespace MIS4200Team2Project.Controllers
         }
 
         // GET: Profiles/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -51,7 +53,10 @@ namespace MIS4200Team2Project.Controllers
         {
             if (ModelState.IsValid)
             {
-                profile.profileID = Guid.NewGuid();
+                //profile.profileID = Guid.NewGuid();
+                Guid profileID;
+                Guid.TryParse(User.Identity.GetUserId(), out profileID);
+                profile.profileID = profileID;
                 db.profile.Add(profile);
                 db.SaveChanges();
                 return RedirectToAction("Index");
