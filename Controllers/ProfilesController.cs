@@ -12,6 +12,7 @@ using MIS4200Team2Project.Models;
 
 namespace MIS4200Team2Project.Controllers
 {
+    [Authorize]
     public class ProfilesController : Controller
     {
         private MIS4200Team2Context db = new MIS4200Team2Context();

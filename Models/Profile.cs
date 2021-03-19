@@ -48,5 +48,15 @@ namespace MIS4200Team2Project.Models
 
         [Display(Name = "Bio")]
         public string bio { get; set; }
+
+        public roles role { get; set; }
+
+        public enum roles
+        {
+            admin = 0,
+            owner = 1,
+            visitor = 2
+        }
+
     }
 }
