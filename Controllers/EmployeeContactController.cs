@@ -6,32 +6,27 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Microsoft.AspNet.Identity;
 using MIS4200Team2Project.DAL;
 using MIS4200Team2Project.Models;
 
 namespace MIS4200Team2Project.Controllers
 {
-    [Authorize]
-    public class ProfilesController : Controller
+    public class EmployeeContactController : Controller
     {
         private MIS4200Team2Context db = new MIS4200Team2Context();
 
-        // GET: Profiles
+        // GET: EmployeeContact
         public ActionResult Index()
         {
-            return View(db.profile.ToList());
+            return View(db.profile.OrderBy(p => p.lastName).ToList());
         }
 
-        // GET: Profiles/Details/5
+        // GET: EmployeeContact/Details/5
         public ActionResult Details(Guid? id)
         {
             if (id == null)
             {
-                // return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-                Guid profileID;
-                Guid.TryParse(User.Identity.GetUserId(), out profileID);
-                id = profileID;
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Profile profile = db.profile.Find(id);
             if (profile == null)
@@ -41,26 +36,22 @@ namespace MIS4200Team2Project.Controllers
             return View(profile);
         }
 
-        // GET: Profiles/Create
-        [Authorize]
+        // GET: EmployeeContact/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Profiles/Create
+        // POST: EmployeeContact/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "profileID,lastName,firstName,hireDate,phone,email,position,operatingGroup,city,state,bio")] Profile profile)
+        public ActionResult Create([Bind(Include = "profileID,lastName,firstName,hireDate,phone,email,position,operatingGroup,city,state,bio,role")] Profile profile)
         {
             if (ModelState.IsValid)
             {
-                //profile.profileID = Guid.NewGuid();
-                Guid profileID;
-                Guid.TryParse(User.Identity.GetUserId(), out profileID);
-                profile.profileID = profileID;
+                profile.profileID = Guid.NewGuid();
                 db.profile.Add(profile);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -69,7 +60,7 @@ namespace MIS4200Team2Project.Controllers
             return View(profile);
         }
 
-        // GET: Profiles/Edit/5
+        // GET: EmployeeContact/Edit/5
         public ActionResult Edit(Guid? id)
         {
             if (id == null)
@@ -84,12 +75,12 @@ namespace MIS4200Team2Project.Controllers
             return View(profile);
         }
 
-        // POST: Profiles/Edit/5
+        // POST: EmployeeContact/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "profileID,lastName,firstName,hireDate,phone,email,position,operatingGroup,city,state,bio")] Profile profile)
+        public ActionResult Edit([Bind(Include = "profileID,lastName,firstName,hireDate,phone,email,position,operatingGroup,city,state,bio,role")] Profile profile)
         {
             if (ModelState.IsValid)
             {
@@ -100,7 +91,7 @@ namespace MIS4200Team2Project.Controllers
             return View(profile);
         }
 
-        // GET: Profiles/Delete/5
+        // GET: EmployeeContact/Delete/5
         public ActionResult Delete(Guid? id)
         {
             if (id == null)
@@ -115,7 +106,7 @@ namespace MIS4200Team2Project.Controllers
             return View(profile);
         }
 
-        // POST: Profiles/Delete/5
+        // POST: EmployeeContact/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid id)

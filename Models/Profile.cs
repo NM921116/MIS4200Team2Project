@@ -54,8 +54,8 @@ namespace MIS4200Team2Project.Models
         public enum roles
         {
             admin = 0,
-            owner = 1,
-            visitor = 2
+            employee = 1,
+
         }
 
     }

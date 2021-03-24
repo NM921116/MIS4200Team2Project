@@ -168,6 +168,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\EmployeeContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProfilePageController.cs" />
@@ -252,6 +253,11 @@
     <Content Include="Views\Profiles\Details.cshtml" />
     <Content Include="Views\Profiles\Edit.cshtml" />
     <Content Include="Views\Profiles\Index.cshtml" />
+    <Content Include="Views\EmployeeContact\Delete.cshtml" />
+    <Content Include="Views\EmployeeContact\Details.cshtml" />
+    <Content Include="Views\EmployeeContact\Edit.cshtml" />
+    <Content Include="Views\EmployeeContact\Index.cshtml" />
+    <Content Include="Views\EmployeeContact\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
