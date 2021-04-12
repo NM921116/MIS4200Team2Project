@@ -7,7 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
@@ -16,6 +16,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.firstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.phone)
@@ -36,6 +39,9 @@
             @Html.DisplayNameFor(model => model.state)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.bio)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.role)
         </th>
         <th></th>
@@ -48,6 +54,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.firstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.phone)
@@ -68,10 +77,16 @@
             @Html.DisplayFor(modelItem => item.state)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.role)
+            @Html.DisplayFor(modelItem => item.bio)
         </td>
         <td>
 
+            @Html.DisplayFor(modelItem => item.role)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.profileID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.profileID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.profileID })
         </td>
     </tr>
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -25,8 +26,11 @@ namespace MIS4200Team2Project.Models
                 return lastName + ", " + firstName;
             }
         }
-        [Display(Name = "Employee Since")]
-        public DateTime hireDate { get; set; }
+      
+        [Display(Name = "Date Hired")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "(0:MM/dd/yyyy)", ApplyFormatInEditMode = true)]
+        public Nullable<System.DateTime> Date { get; set; }
 
         [Display(Name = "Phone Number")]
         public string phone { get; set; }
@@ -48,6 +52,15 @@ namespace MIS4200Team2Project.Models
 
         [Display(Name = "Bio")]
         public string bio { get; set; }
+
+        public ICollection<EmployeeRec> Recognition { get; set; }
+        //public ICollection<Recognition> Recognition { get; set; }
+
+
+
+
+        // [Display(Name = "Building Image")]
+        //  public string buildingImage { get; set; }
 
         public roles role { get; set; }
 

@@ -171,7 +171,7 @@
     <Compile Include="Controllers\EmployeeContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\ProfilePageController.cs" />
+    <Compile Include="Controllers\NewProfileController.cs" />
     <Compile Include="Controllers\ProfilesController.cs" />
     <Compile Include="DAL\MIS4200Team2Context.cs" />
     <Compile Include="Global.asax.cs">
@@ -179,10 +179,11 @@
     </Compile>
     <Compile Include="Migrations\MIS4200Team2Context\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\EmployeeRec.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Profile.cs" />
-    <Compile Include="Models\ProfileProfile.cs" />
+    <Compile Include="Models\Recognition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -195,6 +196,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="pictures\Centric.png" />
+    <Content Include="pictures\Centric2.png" />
     <Content Include="pictures\one.jpg" />
     <Content Include="pictures\one.png" />
     <Content Include="pictures\Cool.JPG" />
@@ -258,6 +261,11 @@
     <Content Include="Views\EmployeeContact\Edit.cshtml" />
     <Content Include="Views\EmployeeContact\Index.cshtml" />
     <Content Include="Views\EmployeeContact\Create.cshtml" />
+    <Content Include="Views\NewProfile\Create.cshtml" />
+    <Content Include="Views\NewProfile\Delete.cshtml" />
+    <Content Include="Views\NewProfile\Details.cshtml" />
+    <Content Include="Views\NewProfile\Edit.cshtml" />
+    <Content Include="Views\NewProfile\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

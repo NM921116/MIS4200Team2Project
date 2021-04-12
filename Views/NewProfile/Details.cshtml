@@ -1,7 +1,7 @@
 ﻿@model MIS4200Team2Project.Models.Profile
 
 @{
-    ViewBag.Title = "Profile Details";
+    ViewBag.Title = "Details";
 }
 
 <!DOCTYPE html>
@@ -26,65 +26,61 @@
 
 
     <div class="container-fluid">
+        </div>
 
 
-
-    <div class="container text-center">
-        <div class="row">
-            <div class="col-sm-3 well">
-                <div class="well">
-                    <p><a href="#">My Profile</a></p>
-                </div>
-
-
-
-
-
-
-
-                        <p><a href="#">User Info</a></p>
-                    <p>
-
-                        <dt>
-                            @Html.DisplayNameFor(model => model.fullName)
-                        </dt>
-                        @Html.DisplayFor(model => model.fullName)
-                        <dt>
-                            @Html.DisplayNameFor(model => model.hireDate)
-                        </dt>
-                        @Html.DisplayFor(model => model.hireDate)
-                        <dt>
-                            @Html.DisplayNameFor(model => model.position)
-                        </dt>
-                        @Html.DisplayFor(model => model.position)
-                        <dt>
-                            @Html.DisplayNameFor(model => model.operatingGroup)
-                        </dt>
-                        @Html.DisplayFor(model => model.operatingGroup)
-                        <dt>
-                            @Html.DisplayNameFor(model => model.city)
-                        </dt>
-                        @Html.DisplayFor(model => model.city)
-                        <dt>
-                            @Html.DisplayNameFor(model => model.state)
-                        </dt>
-                        @Html.DisplayFor(model => model.state)
-                    <p><a href="#">User Info</a></p>
-                    <dt>
-                        @Html.DisplayNameFor(model => model.email)
-                    </dt>
-                    @Html.DisplayFor(model => model.email)
-                    <dt>
-                        @Html.DisplayNameFor(model => model.phone)
-                    </dt>
-                    @Html.DisplayFor(model => model.phone)
-                    </p>
-                </div>
-                    <div class="alert alert-success fade in">
-                        <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                        <p><strong>Ey!</strong></p>
-                        People are looking at your profile. Find out who.
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-sm-3 well">
+                    <div class="well">
+                        <p><a href="#">My Profile</a></p>
                     </div>
+
+
+
+
+
+
+                    <div class="well">
+                        <p><a href="#">User Info</a></p>
+                        <p>
+
+                            <dt>
+                                @Html.DisplayNameFor(model => model.fullName)
+                            </dt>
+                            @Html.DisplayFor(model => model.fullName)
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Date)
+                            </dt>
+                            @Html.DisplayFor(model => model.Date)
+                            <dt>
+                                @Html.DisplayNameFor(model => model.position)
+                            </dt>
+                            @Html.DisplayFor(model => model.position)
+                            <dt>
+                                @Html.DisplayNameFor(model => model.operatingGroup)
+                            </dt>
+                            @Html.DisplayFor(model => model.operatingGroup)
+                            <dt>
+                                @Html.DisplayNameFor(model => model.city)
+                            </dt>
+                            @Html.DisplayFor(model => model.city)
+                            <dt>
+                                @Html.DisplayNameFor(model => model.state)
+                            </dt>
+                            @Html.DisplayFor(model => model.state)
+                        <p><a href="#">User Info</a></p>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.email)
+                        </dt>
+                        @Html.DisplayFor(model => model.email)
+                        <dt>
+                            @Html.DisplayNameFor(model => model.phone)
+                        </dt>
+                        @Html.DisplayFor(model => model.phone)
+                        </p>
+                    </div>
+
                     <p><a href="#">Link</a></p>
                     <p><a href="#">Link</a></p>
                     <p><a href="#">Link</a></p>
@@ -165,19 +161,12 @@
                     <p>Fri. 27 November 2015</p>
                     <button class="btn btn-primary">Info</button>
                 </div>
-                <div class="well">
-                    <p>ADS</p>
-                </div>
-                <div class="well">
-                    <p>ADS</p>
-                </div>
+
             </div>
         </div>
     </div>
 
-    <footer class="container-fluid text-center">
-        <p>Footer Text</p>
-    </footer>
+
 
 </body>
 </html>

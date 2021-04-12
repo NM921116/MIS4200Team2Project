@@ -14,7 +14,8 @@ namespace MIS4200Team2Project.DAL
 
         }
         public DbSet<Profile> profile { get; set; }
-        
+        public DbSet<EmployeeRec> employeeRec { get; set; }
+
 
     }
 }
