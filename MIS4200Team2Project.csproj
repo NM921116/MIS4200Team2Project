@@ -173,17 +173,17 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NewProfileController.cs" />
     <Compile Include="Controllers\ProfilesController.cs" />
+    <Compile Include="Controllers\ReccomendationsController.cs" />
     <Compile Include="DAL\MIS4200Team2Context.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\MIS4200Team2Context\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\EmployeeRec.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Profile.cs" />
-    <Compile Include="Models\Recognition.cs" />
+    <Compile Include="Models\Reccomendation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -266,6 +266,11 @@
     <Content Include="Views\NewProfile\Details.cshtml" />
     <Content Include="Views\NewProfile\Edit.cshtml" />
     <Content Include="Views\NewProfile\Index.cshtml" />
+    <Content Include="Views\Reccomendations\Create.cshtml" />
+    <Content Include="Views\Reccomendations\Delete.cshtml" />
+    <Content Include="Views\Reccomendations\Details.cshtml" />
+    <Content Include="Views\Reccomendations\Edit.cshtml" />
+    <Content Include="Views\Reccomendations\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

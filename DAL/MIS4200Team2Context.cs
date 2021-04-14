@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Web;
 
@@ -13,8 +14,13 @@ namespace MIS4200Team2Project.DAL
         {
 
         }
-        public DbSet<Profile> profile { get; set; }
-        public DbSet<EmployeeRec> employeeRec { get; set; }
+      public DbSet<Profile> profile { get; set; }
+      public DbSet<Reccomendation> Recomendation { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();  // note: this is all one line!
+        }
 
 
     }

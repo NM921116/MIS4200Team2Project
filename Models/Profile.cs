@@ -7,9 +7,9 @@ using System.Web;
 
 namespace MIS4200Team2Project.Models
 {
-    public class Profile
+   public class Profile
     {
-        [Display(Name = "User ID")]
+      [Display(Name = "User ID")]
         public Guid profileID { get; set; }
        
         [Display(Name = "Last Name")]
@@ -18,46 +18,45 @@ namespace MIS4200Team2Project.Models
         [Display(Name = "First Name")]
         public string firstName { get; set; }
 
-        [Display(Name = "Name")]
+      [Display(Name = "Name")]
         public string fullName
         {
             get
             {
                 return lastName + ", " + firstName;
-            }
         }
+      }
       
-        [Display(Name = "Date Hired")]
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "(0:MM/dd/yyyy)", ApplyFormatInEditMode = true)]
-        public Nullable<System.DateTime> Date { get; set; }
+      [Display(Name = "Date Hired")]
+      [DataType(DataType.Date)]
+     [DisplayFormat(DataFormatString = "(0:MM/dd/yyyy)", ApplyFormatInEditMode = true)]
+      public Nullable<System.DateTime> Date { get; set; }
 
-        [Display(Name = "Phone Number")]
-        public string phone { get; set; }
+      [Display(Name = "Phone Number")]
+      public string phone { get; set; }
 
-        [Display(Name = "Email")]
-        public string email { get; set; }
+      [Display(Name = "Email")]
+      public string email { get; set; }
 
-        [Display(Name = "Position")]
-        public string position { get; set; }
+      [Display(Name = "Position")]
+      public string position { get; set; }
 
-        [Display(Name = "Operating Group")]
-        public string operatingGroup { get; set; }
+      [Display(Name = "Operating Group")]
+      public string operatingGroup { get; set; }
 
-        [Display(Name = "City")]
-        public string city { get; set; }
+     [Display(Name = "City")]
+      public string city { get; set; }
 
-        [Display(Name = "State")]
-        public string state { get; set; }
+     [Display(Name = "State")]
+      public string state { get; set; }
 
-        [Display(Name = "Bio")]
-        public string bio { get; set; }
-
-        public ICollection<EmployeeRec> Recognition { get; set; }
-        //public ICollection<Recognition> Recognition { get; set; }
+     [Display(Name = "Bio")]
+      public string bio { get; set; }
 
 
 
+
+     public ICollection<Reccomendation> employeeRecId { get; set; }
 
         // [Display(Name = "Building Image")]
         //  public string buildingImage { get; set; }
@@ -71,5 +70,5 @@ namespace MIS4200Team2Project.Models
 
         }
 
-    }
+    }   
 }
