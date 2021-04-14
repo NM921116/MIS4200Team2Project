@@ -16,7 +16,7 @@ namespace MIS4200Team2Project.Controllers
         private MIS4200Team2Context db = new MIS4200Team2Context();
 
         // GET: Reccomendations
-        public ActionResult Index()
+        public ActionResult Index(Guid? id, string emp)
         {
             var recomendation = db.Recomendation.Include(r => r.Employee).Include(r => r.Recognition).Include(r => r.Recognizer);
             return View(recomendation.ToList());
@@ -40,9 +40,9 @@ namespace MIS4200Team2Project.Controllers
         // GET: Reccomendations/Create
         public ActionResult Create()
         {
-            ViewBag.employeeId = new SelectList(db.profile, "profileID", "lastName");
-            ViewBag.recognitionId = new SelectList(db.profile, "profileID", "lastName");
-            ViewBag.recognizerId = new SelectList(db.profile, "profileID", "lastName");
+            ViewBag.employeeId = new SelectList(db.profile, "profileID", "fullName");
+            ViewBag.recognitionId = new SelectList(db.profile, "profileID", "fullName");
+            ViewBag.recognizerId = new SelectList(db.profile, "profileID", "fullName");
             return View();
         }
 
@@ -61,9 +61,9 @@ namespace MIS4200Team2Project.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.employeeId = new SelectList(db.profile, "profileID", "lastName", reccomendation.employeeId);
-            ViewBag.recognitionId = new SelectList(db.profile, "profileID", "lastName", reccomendation.recognitionId);
-            ViewBag.recognizerId = new SelectList(db.profile, "profileID", "lastName", reccomendation.recognizerId);
+            ViewBag.employeeId = new SelectList(db.profile, "profileID", "fullName", reccomendation.employeeId);
+            ViewBag.recognitionId = new SelectList(db.profile, "profileID", "fullName", reccomendation.recognitionId);
+            ViewBag.recognizerId = new SelectList(db.profile, "profileID", "fullName", reccomendation.recognizerId);
             return View(reccomendation);
         }
 
@@ -79,9 +79,9 @@ namespace MIS4200Team2Project.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.employeeId = new SelectList(db.profile, "profileID", "lastName", reccomendation.employeeId);
-            ViewBag.recognitionId = new SelectList(db.profile, "profileID", "lastName", reccomendation.recognitionId);
-            ViewBag.recognizerId = new SelectList(db.profile, "profileID", "lastName", reccomendation.recognizerId);
+            ViewBag.employeeId = new SelectList(db.profile, "profileID", "fullName", reccomendation.employeeId);
+            ViewBag.recognitionId = new SelectList(db.profile, "profileID", "fullName", reccomendation.recognitionId);
+            ViewBag.recognizerId = new SelectList(db.profile, "profileID", "fullName", reccomendation.recognizerId);
             return View(reccomendation);
         }
 
@@ -98,9 +98,9 @@ namespace MIS4200Team2Project.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.employeeId = new SelectList(db.profile, "profileID", "lastName", reccomendation.employeeId);
-            ViewBag.recognitionId = new SelectList(db.profile, "profileID", "lastName", reccomendation.recognitionId);
-            ViewBag.recognizerId = new SelectList(db.profile, "profileID", "lastName", reccomendation.recognizerId);
+            ViewBag.employeeId = new SelectList(db.profile, "profileID", "fullName", reccomendation.employeeId);
+            ViewBag.recognitionId = new SelectList(db.profile, "profileID", "fullName", reccomendation.recognitionId);
+            ViewBag.recognizerId = new SelectList(db.profile, "profileID", "fullName", reccomendation.recognizerId);
             return View(reccomendation);
         }
 

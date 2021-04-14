@@ -12,13 +12,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Employee.lastName)
+            @Html.DisplayNameFor(model => model.Employee.fullName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Recognition.lastName)
+            @Html.DisplayNameFor(model => model.Recognition.fullName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Recognizer.lastName)
+            @Html.DisplayNameFor(model => model.Recognizer.fullName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.awardDate)
@@ -32,13 +32,13 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Employee.lastName)
+            @Html.DisplayFor(modelItem => item.Employee.fullName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Recognition.lastName)
+            @Html.DisplayFor(modelItem => item.Recognition.fullName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Recognizer.lastName)
+            @Html.DisplayFor(modelItem => item.Recognizer.fullName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.awardDate)
@@ -47,9 +47,7 @@
             @Html.DisplayFor(modelItem => item.description)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ReccomendationId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ReccomendationId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ReccomendationId })
+            @Html.ActionLink("Show Individual Results", "Index", new { id = item.employeeId, emp=item.Employee.fullName})
         </td>
     </tr>
 }
