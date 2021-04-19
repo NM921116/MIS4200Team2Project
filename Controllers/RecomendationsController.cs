@@ -57,7 +57,7 @@ namespace MIS4200Team2Project.Controllers
             {
                 Guid profileID;
                 Guid.TryParse(User.Identity.GetUserId(), out profileID);
-                reccomendation.recognitionId = profileID;
+                reccomendation.recognizerId = profileID;
                 reccomendation.awardDate = DateTime.Now;
                 db.Recomendation.Add(reccomendation);
                 db.SaveChanges();
