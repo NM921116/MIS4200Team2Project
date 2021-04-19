@@ -6,23 +6,24 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 using MIS4200Team2Project.DAL;
 using MIS4200Team2Project.Models;
 
 namespace MIS4200Team2Project.Controllers
 {
-    public class ReccomendationsController : Controller
+    public class RecomendationsController : Controller
     {
         private MIS4200Team2Context db = new MIS4200Team2Context();
 
-        // GET: Reccomendations
-        public ActionResult Index(Guid? id, string emp)
+        // GET: Recomendations
+        public ActionResult Index()
         {
-            var recomendation = db.Recomendation.Include(r => r.Employee).Include(r => r.Recognition).Include(r => r.Recognizer);
+            var recomendation = db.Recomendation.Include(r => r.Recognition).Include(r => r.Recognizer);
             return View(recomendation.ToList());
         }
 
-        // GET: Reccomendations/Details/5
+        // GET: Recomendations/Details/5
         public ActionResult Details(Guid? id)
         {
             if (id == null)
@@ -36,38 +37,39 @@ namespace MIS4200Team2Project.Controllers
             }
             return View(reccomendation);
         }
-
-        // GET: Reccomendations/Create
+        [Authorize]
+        // GET: Recomendations/Create
         public ActionResult Create()
         {
-            ViewBag.employeeId = new SelectList(db.profile, "profileID", "fullName");
             ViewBag.recognitionId = new SelectList(db.profile, "profileID", "fullName");
             ViewBag.recognizerId = new SelectList(db.profile, "profileID", "fullName");
             return View();
         }
 
-        // POST: Reccomendations/Create
+        // POST: Recomendations/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ReccomendationId,employeeId,recognizerId,recognitionId,awardDate,description")] Reccomendation reccomendation)
+        public ActionResult Create([Bind(Include = "ReccomendationId,recognizerId,recognitionId,award,awardDate,description")] Reccomendation reccomendation)
         {
             if (ModelState.IsValid)
             {
-                reccomendation.ReccomendationId = Guid.NewGuid();
+                Guid profileID;
+                Guid.TryParse(User.Identity.GetUserId(), out profileID);
+                reccomendation.recognitionId = profileID;
+                reccomendation.awardDate = DateTime.Now;
                 db.Recomendation.Add(reccomendation);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.employeeId = new SelectList(db.profile, "profileID", "fullName", reccomendation.employeeId);
             ViewBag.recognitionId = new SelectList(db.profile, "profileID", "fullName", reccomendation.recognitionId);
             ViewBag.recognizerId = new SelectList(db.profile, "profileID", "fullName", reccomendation.recognizerId);
             return View(reccomendation);
         }
 
-        // GET: Reccomendations/Edit/5
+        // GET: Recomendations/Edit/5
         public ActionResult Edit(Guid? id)
         {
             if (id == null)
@@ -79,18 +81,17 @@ namespace MIS4200Team2Project.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.employeeId = new SelectList(db.profile, "profileID", "fullName", reccomendation.employeeId);
             ViewBag.recognitionId = new SelectList(db.profile, "profileID", "fullName", reccomendation.recognitionId);
             ViewBag.recognizerId = new SelectList(db.profile, "profileID", "fullName", reccomendation.recognizerId);
             return View(reccomendation);
         }
 
-        // POST: Reccomendations/Edit/5
+        // POST: Recomendations/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ReccomendationId,employeeId,recognizerId,recognitionId,awardDate,description")] Reccomendation reccomendation)
+        public ActionResult Edit([Bind(Include = "ReccomendationId,recognizerId,recognitionId,award,awardDate,description")] Reccomendation reccomendation)
         {
             if (ModelState.IsValid)
             {
@@ -98,13 +99,12 @@ namespace MIS4200Team2Project.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.employeeId = new SelectList(db.profile, "profileID", "fullName", reccomendation.employeeId);
             ViewBag.recognitionId = new SelectList(db.profile, "profileID", "fullName", reccomendation.recognitionId);
             ViewBag.recognizerId = new SelectList(db.profile, "profileID", "fullName", reccomendation.recognizerId);
             return View(reccomendation);
         }
 
-        // GET: Reccomendations/Delete/5
+        // GET: Recomendations/Delete/5
         public ActionResult Delete(Guid? id)
         {
             if (id == null)
@@ -119,7 +119,7 @@ namespace MIS4200Team2Project.Controllers
             return View(reccomendation);
         }
 
-        // POST: Reccomendations/Delete/5
+        // POST: Recomendations/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid id)

@@ -11,30 +11,42 @@ namespace MIS4200Team2Project.Models
     {
 
 
-        public Guid ReccomendationId { get; set; }
+        public int ReccomendationId { get; set; }
 
-        [Display(Name = "Employee Getting Recognition")]
-        [Required(ErrorMessage = "Please Select an Employee")]
 
-        public Guid employeeId { get; set; }
 
-        [ForeignKey("employeeId")]
 
-        public virtual Profile Employee { get; set; }
 
-        [Display(Name = "Employee Giving Recognition")]  
-        public Guid recognizerId {get; set;}
+
+        [Display(Name = "Employee Giving Recognition")]
+        public Guid recognizerId { get; set; }
         [ForeignKey("recognizerId")]
-        
+
         public virtual Profile Recognizer { get; set; }
 
-      [Display(Name = "Recognition Awarded")]
-      public Guid recognitionId { get; set; }
-      [ForeignKey("recognitionId")]
+        [Display(Name = "Recognition Awarded To")]
+        [Required(ErrorMessage = "Please Select an Employee")]
+        public Guid recognitionId { get; set; }
+        [ForeignKey("recognitionId")]
 
-      //public virtual Profile Recognition {​ get; set; }​
-      public virtual Profile Recognition { get; set; }
+        //public virtual Profile Recognition {​ get; set; }​
+        public virtual Profile Recognition { get; set; }
 
+
+        // public string[] coreValues = new string[7] {"Commit to Delivery Excellence", "Embrace Integrity and Openness", "Practice Responsible Stewardship", "Invest in an Exceptional Culture", "Ignite Passion for the Greater Good", "Strive to Innovate", "Live a Balanced Life"};
+        [Display(Name = "Core value recognized")]
+        public coreValue award { get; set; }
+
+        public enum coreValue
+        {
+            Excellence = 1,
+            Integrity = 2,
+            Stewardship = 3,
+            Culture = 4,
+            Passion = 5,
+            Innovative = 6,
+            Balanced = 7
+        }
 
 
 

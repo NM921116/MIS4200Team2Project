@@ -1,0 +1,65 @@
+﻿@model IEnumerable<MIS4200Team2Project.Models.Reccomendation>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        @*  <th>
+                      @Html.DisplayNameFor(model => model.Employee.fullName)
+            </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Recognition.fullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Recognizer.fullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.award)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.awardDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            @* <td>
+                    @Html.DisplayFor(modelItem => item.Employee.fullName)
+                </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Recognition.fullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Recognizer.fullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.award)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.awardDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.description)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ReccomendationId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ReccomendationId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ReccomendationId })
+            </td>
+        </tr>
+    }
+
+</table>
+

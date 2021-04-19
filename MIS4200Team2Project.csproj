@@ -172,8 +172,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NewProfileController.cs" />
-    <Compile Include="Controllers\ProfilesController.cs" />
-    <Compile Include="Controllers\ReccomendationsController.cs" />
+    <Compile Include="Controllers\NewReccomendationsController.cs" />
+    <Compile Include="Controllers\RecomendationsController.cs" />
     <Compile Include="DAL\MIS4200Team2Context.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -251,11 +251,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Profiles\Create.cshtml" />
-    <Content Include="Views\Profiles\Delete.cshtml" />
-    <Content Include="Views\Profiles\Details.cshtml" />
-    <Content Include="Views\Profiles\Edit.cshtml" />
-    <Content Include="Views\Profiles\Index.cshtml" />
     <Content Include="Views\EmployeeContact\Delete.cshtml" />
     <Content Include="Views\EmployeeContact\Details.cshtml" />
     <Content Include="Views\EmployeeContact\Edit.cshtml" />
@@ -266,11 +261,17 @@
     <Content Include="Views\NewProfile\Details.cshtml" />
     <Content Include="Views\NewProfile\Edit.cshtml" />
     <Content Include="Views\NewProfile\Index.cshtml" />
-    <Content Include="Views\Reccomendations\Create.cshtml" />
-    <Content Include="Views\Reccomendations\Delete.cshtml" />
-    <Content Include="Views\Reccomendations\Details.cshtml" />
-    <Content Include="Views\Reccomendations\Edit.cshtml" />
-    <Content Include="Views\Reccomendations\Index.cshtml" />
+    <Content Include="Views\NewReccomendations\Create.cshtml" />
+    <Content Include="Views\NewReccomendations\Delete.cshtml" />
+    <Content Include="Views\NewReccomendations\Details.cshtml" />
+    <Content Include="Views\NewReccomendations\Edit.cshtml" />
+    <Content Include="Views\NewReccomendations\Index.cshtml" />
+    <Content Include="Views\NewReccomendations\Awards.cshtml" />
+    <Content Include="Views\Recomendations\Create.cshtml" />
+    <Content Include="Views\Recomendations\Delete.cshtml" />
+    <Content Include="Views\Recomendations\Details.cshtml" />
+    <Content Include="Views\Recomendations\Edit.cshtml" />
+    <Content Include="Views\Recomendations\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
