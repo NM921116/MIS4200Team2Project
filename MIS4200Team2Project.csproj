@@ -198,10 +198,16 @@
     <Content Include="Content\Site.css" />
     <Content Include="pictures\Centric.png" />
     <Content Include="pictures\Centric2.png" />
+    <Content Include="pictures\Centric_1.png" />
+    <Content Include="pictures\Centric_2.jpeg" />
+    <Content Include="pictures\Centric_3.jpeg" />
+    <Content Include="pictures\lyonnette.png" />
     <Content Include="pictures\one.jpg" />
     <Content Include="pictures\one.png" />
     <Content Include="pictures\Cool.JPG" />
     <Content Include="pictures\Cool2.JPG" />
+    <Content Include="pictures\Picture1.png" />
+    <Content Include="pictures\real-carbon-fibre.png" />
     <Content Include="pictures\two.jpg" />
     <Content Include="pictures\three.jpg" />
     <Content Include="Scripts\bootstrap.js" />

@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
@@ -9,24 +10,26 @@
 
 </head>
 <body>
-    
-    <div class="navbar navbar-inverse navbar-fixed-top">
+
+
+    <div class="navbar navbar-static-top navbar-fixed-top" style="background-color: #979fd6;">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <button type="button" class="navbar-fixed-top" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
                 .
-                <a href="#" class="navbar-left"><img src="~/pictures/Centric2.png" ></a>
-                
-         
+                <a href="#" class="navbar-left"> <img src="~/pictures/Picture1.png" style="width:30%"></a>
+
+
+
             </div>
 
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home") </li> 
+                    <li>@Html.ActionLink("Home", "Index", "Home") </li>
                     <li>@Html.ActionLink("Leaderboard", "Index", "Recomendations")</li>
                     <li>@Html.ActionLink("Employee Contact List", "Index", "EmployeeContact")</li>
                     <li>@Html.ActionLink("My Profile", "Details", "NewProfile")</li>
@@ -34,7 +37,7 @@
                 </ul>
 
 
-             
+
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
